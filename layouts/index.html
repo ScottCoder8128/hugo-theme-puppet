@@ -1,5 +1,5 @@
 {{ define "container" }}
-{{ $paginator := .Paginate .Site.RegularPages }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
 {{ range $paginator.Pages }}
    {{ .Render "summary" }}
 {{ end }}

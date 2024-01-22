@@ -12,26 +12,7 @@
               post-container">
         {{ .Content }}
 
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          {{ with .Prev }}
-          <li class="previous">
-            <a href="{{ .RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .Title }}">
-              Previous<br>
-              <span>{{ .Title }}</span>
-            </a>
-          </li>
-          {{ end }}
-          {{ with .Next }}
-          <li class="next">
-            <a href="{{ .RelPermalink }}" data-toggle="tooltip" data-placement="top" title="{{ .Title }}">
-              Next<br>
-              <span>{{ .Title }}</span>
-            </a>
-          </li>
-          {{ end }}
-        </ul>
-        <hr style="visibility: hidden;" />
+       
 
         <!-- comments -->
         {{ partial "comments.html" . }}
@@ -63,7 +44,6 @@
 
         <!-- Featured Tags -->
         {{ .Scratch.Set "bottom" true }}
-        {{ partial "featured-tags.html" . }}
 
         <!-- Friends Blog -->
         {{ partial "friends.html" . }}
